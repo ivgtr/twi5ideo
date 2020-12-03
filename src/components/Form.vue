@@ -5,13 +5,15 @@
         <input
           v-model="inputUrl"
           placeholder="https://twitter.com/"
-          class="input bg-white px-6 pr-12 rounded-full text-sm focus:outline-none"
+          class="bg-white px-6 pr-12 rounded-full text-sm focus:outline-none"
           type="text"
         />
         <button
-          class="absolute right-0 top-0 mt-5 mr-4 transition-opacity duration-150 ease-in-out focus:outline-none"
+          class="absolute right-0 top-0 h-full px-4 transition-opacity duration-150 ease-in-out focus:outline-none"
           :disabled="error.disabled || !inputUrl.length"
           :style="{ opacity: error.disabled || !inputUrl.length ? '0.3' : '1' }"
+          style="border-radius: 50%"
+          aria-label="送信ボタン"
         >
           <span class="icon"></span>
         </button>
@@ -113,12 +115,15 @@ export default Vue.extend({
 </script>
 
 <style scoped>
-.input {
+input {
   width: 133%;
   height: 3.3rem;
   font-size: 18px;
   transform: scale(0.75);
   transform-origin: center left;
+}
+button:disabled {
+  cursor: default;
 }
 .icon {
   box-sizing: border-box;
