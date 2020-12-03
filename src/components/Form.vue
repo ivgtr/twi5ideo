@@ -8,13 +8,21 @@
           class="bg-white h-10 w-full px-5 pr-10 rounded-full text-sm focus:outline-none"
           type="text"
         />
-        <button class="absolute right-0 top-0 mt-4 mr-4">
+        <button
+          class="absolute right-0 top-0 mt-4 mr-4 transition-opacity duration-150 ease-in-out"
+          :disabled="error.disabled || !inputUrl.length"
+          :style="{ opacity: error.disabled || !inputUrl.length ? '0.3' : '1' }"
+        >
           <span class="icon"></span>
         </button>
       </div>
     </form>
     <div class="h-8 mt-8 text-center">
-      <p v-if="error" class="text-red-500">{{ error.message }}</p>
+      <transition name="error">
+        <p v-if="error.message.length" class="text-red-500">
+          {{ error.message }}
+        </p>
+      </transition>
     </div>
   </div>
 </template>
@@ -143,5 +151,31 @@ export default Vue.extend({
   background: currentColor;
   left: 4px;
   bottom: 5px;
+}
+
+.error-enter-active {
+  animation: shake 0.2s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+@keyframes shake {
+  from,
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translate3d(-10px, 0, 0);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translate3d(10px, 0, 0);
+  }
 }
 </style>
