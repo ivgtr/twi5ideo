@@ -10,14 +10,14 @@ export default {
   srcDir: 'src/',
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    title: 'Twitterの動画を簡単に保存できる。',
+    title: 'Twitterの動画を簡単に保存できる',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
         name: 'description',
-        content: 'Twitterの動画を簡単に保存できる。',
+        content: 'Twitterの動画を簡単に保存できる',
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
@@ -49,4 +49,8 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {},
+
+  router: {
+    base: '/',
+  },
 }
