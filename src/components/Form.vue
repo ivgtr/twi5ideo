@@ -4,7 +4,7 @@
       <div class="relative text-gray-600">
         <input
           v-model="inputUrl"
-          placeholder="url"
+          placeholder="https://twitter.com/"
           class="input bg-white px-6 pr-12 rounded-full text-sm focus:outline-none"
           type="text"
         />
