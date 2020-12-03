@@ -1,6 +1,7 @@
 <template>
-  <div class="container">
-    <Finder />
+  <div class="container mx-auto">
+    <h1 class="text-4xl text-white font-bold text-center">twi5ideo</h1>
+    <Form />
   </div>
 </template>
 

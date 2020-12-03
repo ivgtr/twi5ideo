@@ -1,12 +1,12 @@
 <template>
-  <div class="root relative grid items-center overflow-hidden">
+  <div class="root relative grid items-center overflow-hidden bg-gray-800">
     <main class="main w-full h-full rounded flex items-center justify-center">
       <nuxt />
     </main>
   </div>
 </template>
 
-<style>
+<style scoped>
 .root {
   justify-items: center;
   width: 100%;
