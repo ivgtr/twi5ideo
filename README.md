@@ -1,7 +1,7 @@
 <p align="center">
   <h3 align="center">Twitter 5ideo Downloader</h3>
   <p align="center">
-    <a href="https://twitter-5downloader.vercel.app/">https://twitter-5downloader.vercel.app/</a>
+    <a href="https://twi5ideo.vercel.app/">https://twi5ideo.vercel.app/</a>
   </p>
   <p align="center">動画の保存を補助します</p>
 </p>
