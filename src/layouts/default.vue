@@ -1,6 +1,7 @@
 <template>
-  <div class="root relative grid items-center overflow-hidden bg-gray-800">
-    <main class="main w-full h-full rounded flex items-center justify-center">
+  <div class="root relative overflow-hidden bg-gray-800">
+    <Navigation />
+    <main class="main w-full min-h-full flex items-center justify-center">
       <nuxt />
     </main>
   </div>
@@ -11,6 +12,7 @@
   justify-items: center;
   width: 100%;
   min-height: 100vh;
+  height: 1px;
 }
 /* stylelint-disable */
 _::-webkit-full-page-media,

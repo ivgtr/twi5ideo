@@ -9,7 +9,7 @@
           type="text"
         />
         <button
-          class="absolute right-0 top-0 mt-5 mr-4 transition-opacity duration-150 ease-in-out"
+          class="absolute right-0 top-0 mt-5 mr-4 transition-opacity duration-150 ease-in-out focus:outline-none"
           :disabled="error.disabled || !inputUrl.length"
           :style="{ opacity: error.disabled || !inputUrl.length ? '0.3' : '1' }"
         >
@@ -37,7 +37,6 @@ export default Vue.extend({
   data() {
     return {
       inputUrl: '',
-      videoUrl: '',
       error: {
         message: '',
         disabled: false,
@@ -51,9 +50,6 @@ export default Vue.extend({
         disabled: false,
       }
     },
-  },
-  created() {
-    this.videoUrl = ''
   },
   methods: {
     urlValidate(url: string) {
@@ -89,13 +85,15 @@ export default Vue.extend({
             .then((response) => response.json())
             .then((data) => {
               if (data.status === 200) {
-                this.videoUrl = data.url
+                return data.url
               } else {
                 throw data.message
               }
             })
-            .then(() => {
-              window.open(this.videoUrl)
+            .then((url) => {
+              if (!window.open(url, '_blank')) {
+                location.href = url
+              }
             })
             .catch((error) => {
               throw new Error(error)
