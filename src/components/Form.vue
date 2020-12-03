@@ -5,11 +5,11 @@
         <input
           v-model="inputUrl"
           placeholder="url"
-          class="bg-white h-10 w-full px-5 pr-10 rounded-full text-sm focus:outline-none"
+          class="input bg-white px-6 pr-12 rounded-full text-sm focus:outline-none"
           type="text"
         />
         <button
-          class="absolute right-0 top-0 mt-4 mr-4 transition-opacity duration-150 ease-in-out"
+          class="absolute right-0 top-0 mt-5 mr-4 transition-opacity duration-150 ease-in-out"
           :disabled="error.disabled || !inputUrl.length"
           :style="{ opacity: error.disabled || !inputUrl.length ? '0.3' : '1' }"
         >
@@ -115,6 +115,13 @@ export default Vue.extend({
 </script>
 
 <style scoped>
+.input {
+  width: 133%;
+  height: 3.3rem;
+  font-size: 18px;
+  transform: scale(0.75);
+  transform-origin: center left;
+}
 .icon {
   box-sizing: border-box;
   position: relative;
@@ -126,7 +133,7 @@ export default Vue.extend({
   border-top: 0;
   border-bottom-left-radius: 2px;
   border-bottom-right-radius: 2px;
-  margin-top: 8px;
+  margin-top: 10px;
 }
 .icon::after {
   content: '';
