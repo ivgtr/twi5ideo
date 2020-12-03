@@ -1,5 +1,6 @@
 {
-  "name": "t5dl",
+  "name": "twitter-5downloader",
+  "description": "Twitter 5ideo Downloader",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -13,7 +14,8 @@
   "dependencies": {
     "@nuxt/typescript-runtime": "^2.0.0",
     "core-js": "^3.6.5",
-    "nuxt": "^2.14.6"
+    "nuxt": "^2.14.6",
+    "url-parse": "^1.4.7"
   },
   "devDependencies": {
     "@nuxt/types": "^2.14.6",
@@ -23,6 +25,7 @@
     "@nuxtjs/eslint-module": "^2.0.0",
     "@nuxtjs/tailwindcss": "^3.1.0",
     "@nuxtjs/vercel-builder": "^0.18.1",
+    "@types/url-parse": "^1.4.3",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.10.0",
     "eslint-config-prettier": "^6.12.0",
