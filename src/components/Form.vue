@@ -19,9 +19,11 @@
     </form>
     <div class="h-8 mt-8 text-center">
       <transition name="error">
-        <p v-if="error.message.length" class="text-red-500">
-          {{ error.message }}
-        </p>
+        <p
+          v-if="error.message.length"
+          class="text-red-500 whitespace-pre-wrap"
+          v-text="error.message"
+        ></p>
       </transition>
     </div>
   </div>
@@ -68,14 +70,13 @@ export default Vue.extend({
       if (rule.test(tweetId)) {
         return tweetId
       } else {
-        return null
+        throw new Error('urlがおかしいです')
       }
     },
     async submitData() {
       try {
         if (this.urlValidate(this.inputUrl)) {
           const parseUrl = this.urlParse(this.inputUrl)
-          if (!parseUrl) throw new Error('urlがおかしいです')
           await fetch(process.env.ENDPOINT_URL as string, {
             method: 'POST',
             headers: {
@@ -100,7 +101,7 @@ export default Vue.extend({
               throw new Error(error)
             })
         } else {
-          throw new Error('urlがおかしいです')
+          throw new Error('https://twitter.com/ で始まるurlを入力してください')
         }
       } catch (err) {
         this.error = {
