@@ -3,7 +3,7 @@
   <p align="center">
     <a href="https://twi5ideo.vercel.app/">https://twi5ideo.vercel.app/</a>
   </p>
-  <p align="center">動画の保存を補助します</p>
+  <p align="center">Twitterの動画保存を補助します</p>
 </p>
 
 
